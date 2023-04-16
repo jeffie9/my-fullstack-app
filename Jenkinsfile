@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/jeffie9/my-fullstack-app.git'
+                git branch: 'main', url: 'https://github.com/jeffie9/my-fullstack-app.git'
                 dir('api/demo') {
                     // Run Maven on a Unix agent.
                     sh "mvn -Dmaven.test.failure.ignore=true clean package"
